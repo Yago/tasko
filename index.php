@@ -61,7 +61,7 @@ function getTodoData() {
   <body>
 
     <header>
-      <h1>Task<span>r</span></h1>
+      <h1>Task<span>o</span></h1>
     </header>
     <div class="container">
       <?php getTodoData(); ?>
