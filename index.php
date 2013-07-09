@@ -67,7 +67,7 @@ function getTodoData() {
       <?php getTodoData(); ?>
     </div>
     <footer>
-      made by <a href="http://yago.io">Yago</a>
+      <a href="https://github.com/Yago31/taskr/">Fork / Doc</a> - made by <a href="http://yago.io">Yago</a>
     </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

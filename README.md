@@ -4,7 +4,7 @@ Taskr is a light and simple to-do list generator. You only have to create a **Go
 
 ###Google Spreadsheet
 
-Juste create one column and write task as a title. Publish, get the ID and paste it into TASKR.
+Just create one column and write `task` as a title. Publish, get the ID and paste it into TASKR.
 
 ![Google Spreadsheet](img/spreadsheet.png)
 
