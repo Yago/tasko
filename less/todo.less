@@ -1,0 +1,213 @@
+@import 'normalize.less';
+
+
+//=============================================================================
+// MIXINS
+//=============================================================================
+
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+       -o-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.font-size(@sizeValue) {
+  @remValue: (@sizeValue/10);
+  @pxValue: (@sizeValue);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+      -ms-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+.box-shadow(@left, @top, @blur, @spread, @color) {
+  -webkit-box-shadow: @left @top @blur @spread @color;
+     -moz-box-shadow: @left @top @blur @spread @color;
+       -o-box-shadow: @left @top @blur @spread @color;
+          box-shadow: @left @top @blur @spread @color;
+}
+
+
+//=============================================================================
+// VARIABLES
+//=============================================================================
+
+@font-face {
+    font-family: 'Proxima';
+    src: url('../fonts/ProximaNova-Regular.eot?v2');
+    src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ProximaNova-Regular.woff?v2') format('woff'),
+         url('../fonts/ProximaNova-Regular.ttf?v2') format('truetype'),
+         url('../fonts/ProximaNova-Regular.svg#proxima') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Bold';
+    src: url('../fonts/ProximaNova-Bold.eot?v2');
+    src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ProximaNova-Bold.woff?v2') format('woff'),
+         url('../fonts/ProximaNova-Bold.ttf?v2') format('truetype'),
+         url('../fonts/ProximaNova-Bold.svg#bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@textFont:          'Proxima', Helvetica Neue, Helvetica, Arial, sans-serif;
+@titleFont:         'Proxima Bold', Helvetica Neue, Helvetica, Arial, sans-serif;
+
+@white:                         #FFFFFF;
+@black:                         #000000;
+@shade:                         #fafafa;
+@mine:                          #333333;
+@silver:                        #b3b3b3;
+@water:                         #2d95e3;
+@fire:                          #e67e22;
+@grass:                         #49c125;
+
+
+//=============================================================================
+// STYLES
+//=============================================================================
+
+html {
+  font-size: 10px;
+  background: @shade;
+}
+
+body {
+  font-family: @textFont;
+  .font-size(21);
+  background: @shade;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: @titleFont;
+  .font-size(70);
+  span {
+    color: @grass;
+  }
+}
+
+a {
+  color: lighten(@mine, 20%);
+  text-decoration: none;
+  font-family: @titleFont;
+  &:hover {color: @grass;}
+}
+
+.initer {
+  text-align: center;
+  label {
+    font-family: @titleFont;
+    margin-bottom: 10px;
+  }
+  input[type=text] {
+    .border-radius(5px);
+    border: 1px solid @silver;
+    font-family: @textFont;
+    padding: 5px 10px;
+    width: 100%;
+    background: @shade;
+  }
+}
+
+.check {
+  display: block;
+  float: left;
+  width: 22px;
+  height: 22px;
+  overflow: hidden;
+  background: @mine;
+  .border-radius(3px);
+  margin-right: 20px;
+  .transition(all 0.2s ease);
+  img {
+    display: block;
+    position: relative;
+    left: 4px;
+    top: 2px;
+    opacity: 0;
+    .transition(all 0.1s ease);
+  }
+}
+
+label {
+  padding: 0 10px;
+  line-height: 22px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+input[type=checkbox].todo-checkbox {
+  position: absolute;
+  left: -9999999px;
+}
+
+input[type=checkbox].todo-checkbox:checked + label .check {
+  background: @grass;
+  img {
+    opacity: 1;
+  }
+}
+
+input[type=checkbox].todo-checkbox:hover + label .check {
+  background: @silver;
+  img {
+    opacity: 1;
+  }
+}
+
+button, input[type=submit] {
+  background: @mine;
+  border: none;
+  font-family: @titleFont;
+  color: @white;
+  padding: 8px 15px;
+  .border-radius(5px);
+  .box-shadow(0, 5px, 0, 0, @silver);
+  display: block;
+  margin: 0 auto;
+  margin-top: 80px;
+  &:hover {
+    .box-shadow(0, 2px, 0, 0, @silver);
+    position: relative;
+    top: 3px;
+  }
+  &:active {
+    .box-shadow(0, 0px, 0, 0, @silver);
+    position: relative;
+    top: 5px;
+    color: @grass;
+  }
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+footer {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  color: @silver;
+  .font-size(15);
+}
+
+
+
+
+
