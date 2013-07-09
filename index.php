@@ -1,12 +1,18 @@
 <?php
 
+  $protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https';
+  $host     = $_SERVER['HTTP_HOST'];
+  $script   = $_SERVER['SCRIPT_NAME'];
+  $params   = $_SERVER['QUERY_STRING'];
+  $baseUrl  = $protocol . '://' . $host;
+
 function getTodoData() {
 
   if(isset($_GET["id"])){
     $key = $_GET["id"];
     setcookie("LastTodoSpreadsheet", $_GET["id"]);
   }else if(isset($_COOKIE["LastTodoSpreadsheet"])){
-    header('Location: /index.php?id='.$_COOKIE["LastTodoSpreadsheet"]);
+    header('Location: '.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"]);
   }
 
   $index = 0;
@@ -45,7 +51,7 @@ function getTodoData() {
       </form>
     ';
     if (isset($_POST['google-id']) && $_POST['google-id'] != ''){
-      header('Location: /index.php?id='.$_POST['google-id']);
+      header('Location: '.$baseUrl.'/index.php?id='.$_POST['google-id']);
       setcookie("LastTodoSpreadsheet", $_POST['google-id']);
     }
   }
