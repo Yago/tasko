@@ -6,14 +6,22 @@
   $params   = $_SERVER['QUERY_STRING'];
   $baseUrl  = $protocol . '://' . $host;
 
+function createCookie($value){
+  setcookie("LastTodoSpreadsheet", $value);
+}
+
+function reload($url){
+  header('Location: '.$baseUrl.'/index.php?id='.$url);
+}
+
 function getTodoData() {
 
   if(isset($_GET["id"])){
     $key = $_GET["id"];
-    setcookie("LastTodoSpreadsheet", $_GET["id"]);
+    createCookie($_GET["id"]);
   }else if(isset($_COOKIE["LastTodoSpreadsheet"])){
-    //header('Location: '.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"]);
-    echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"].'";</script>';
+    reload($_COOKIE["LastTodoSpreadsheet"]);
+    //echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"].'";</script>';
   }
 
   $index = 0;
@@ -52,9 +60,9 @@ function getTodoData() {
       </form>
     ';
     if (isset($_POST['google-id']) && $_POST['google-id'] != ''){
-      //header('Location: '.$baseUrl.'/index.php?id='.$_POST['google-id']);
-      setcookie("LastTodoSpreadsheet", $_POST['google-id']);
-      echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_POST['google-id'].'";</script>';
+      reload($_POST['google-id']);
+      createCookie($_POST['google-id']);
+      //echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_POST['google-id'].'";</script>';
     }
   }
 
