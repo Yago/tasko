@@ -8,4 +8,4 @@ You only have to create one column and name it **task**. Publish it and set that
 
 ![Google Spreadsheet](img/spreadsheet.png)
 
-###[Let's to-do it !](http://yago31.github.io/taskr)
+###[Let's to-do it !](http://tasko.me)
