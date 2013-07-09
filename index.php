@@ -33,7 +33,7 @@ function getTodoData() {
         <strong>Tasko</strong> turn a simple <strong>Google Spreadsheet</strong> to a light and simple to-do list. You can reuse and share your list as you want!
       </p>
       <p class="description">
-        You only have to create one column and name it <strong>task</strong>. Publish it and set that anyone with a link can see the spreadsheet. Then get the ID and <strong>paste it into Tasko</strong>. Read the <a href="https://github.com/Yago31/taskr/">doc</a> for more informations.
+        You only have to create one column and name it <strong>task</strong>. Publish it and set that anyone with a link can see the spreadsheet. Then get the ID and <strong>paste it into Tasko</strong>. Read the <a href="https://github.com/Yago31/taskr/">code</a> for more informations.
       </p>
       <img class="google-spreasheet" src="img/spreadsheet.png" alt="google spreasheet example" />
     ';
