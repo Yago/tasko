@@ -12,7 +12,8 @@ function getTodoData() {
     $key = $_GET["id"];
     setcookie("LastTodoSpreadsheet", $_GET["id"]);
   }else if(isset($_COOKIE["LastTodoSpreadsheet"])){
-    header('Location: '.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"]);
+    //header('Location: '.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"]);
+    echo '<script>window.location = "index.php";</script>';
   }
 
   $index = 0;
@@ -51,8 +52,9 @@ function getTodoData() {
       </form>
     ';
     if (isset($_POST['google-id']) && $_POST['google-id'] != ''){
-      header('Location: '.$baseUrl.'/index.php?id='.$_POST['google-id']);
+      //header('Location: '.$baseUrl.'/index.php?id='.$_POST['google-id']);
       setcookie("LastTodoSpreadsheet", $_POST['google-id']);
+      echo '<script>window.location = "index.php";</script>';
     }
   }
 
