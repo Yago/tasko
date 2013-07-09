@@ -23,7 +23,7 @@ function cookieCheckbox(){
 }
 
 function refresh(){
-  $("#cookie-rmv").click(function(){
+  $(".cookie-rmv").click(function(){
     var taskNumber = $('.todo-checkbox').length;
     for (var i = 0; i < taskNumber; i++) {
       $.removeCookie('task-'+i);

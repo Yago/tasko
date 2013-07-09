@@ -268,6 +268,12 @@ body {
   background: #fafafa;
   color: #333333;
 }
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+}
 h1 {
   text-align: center;
   text-transform: uppercase;
@@ -278,13 +284,47 @@ h1 {
 h1 span {
   color: #49c125;
 }
+strong {
+  font-weight: normal;
+  font-family: 'Proxima Bold', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
 a {
   color: #666666;
-  text-decoration: none;
   font-family: 'Proxima Bold', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 a:hover {
   color: #49c125;
+}
+.google-spreasheet {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin-top: 30px;
+}
+hr {
+  background: #b3b3b3;
+  border: none;
+  height: 1px;
+  width: 100%;
+  margin: 50px 0;
+}
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+.description {
+  margin: 10px 0;
+  text-align: center;
 }
 .initer {
   text-align: center;
@@ -292,6 +332,11 @@ a:hover {
 .initer label {
   font-family: 'Proxima Bold', Helvetica Neue, Helvetica, Arial, sans-serif;
   margin-bottom: 10px;
+  border: none;
+  padding: 0;
+}
+.initer label span {
+  color: #49c125;
 }
 .initer input[type=text] {
   -webkit-border-radius: 5px;
@@ -301,7 +346,7 @@ a:hover {
   border: 1px solid #b3b3b3;
   font-family: 'Proxima', Helvetica Neue, Helvetica, Arial, sans-serif;
   padding: 5px 10px;
-  width: 100%;
+  width: 70%;
   background: #fafafa;
 }
 .check {
@@ -334,6 +379,18 @@ a:hover {
   -o-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
+@media only screen and (max-width: 767px) {
+  .check {
+    float: left;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .task-content {
+    width: 100%;
+    display: block;
+  }
+}
 label {
   padding: 0 10px;
   line-height: 22px;
@@ -357,6 +414,9 @@ input[type=checkbox].todo-checkbox:hover + label .check {
 }
 input[type=checkbox].todo-checkbox:hover + label .check img {
   opacity: 1;
+}
+input[type=checkbox].todo-checkbox:checked:hover + label .check {
+  background: #49c125;
 }
 button,
 input[type=submit] {
@@ -396,14 +456,12 @@ input[type=submit]:active {
   top: 5px;
   color: #49c125;
 }
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px 0;
+input[type=submit] {
+  margin-top: 30px;
 }
 footer {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 70px;
   padding-bottom: 50px;
   color: #b3b3b3;
   font-size: 15px;

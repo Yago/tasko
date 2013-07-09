@@ -89,6 +89,9 @@ body {
   .font-size(21);
   background: @shade;
   color: @mine;
+  @media only screen and (max-width: 767px) {
+    .font-size(18);
+  }
 }
 
 h1 {
@@ -101,11 +104,48 @@ h1 {
   }
 }
 
+strong {
+  font-weight: normal;
+  font-family: @titleFont;
+}
+
 a {
   color: lighten(@mine, 20%);
-  text-decoration: none;
   font-family: @titleFont;
   &:hover {color: @grass;}
+}
+
+.google-spreasheet {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin-top: 30px;
+}
+
+hr {
+  background: @silver;
+  border: none;
+  height: 1px;
+  width: 100%;
+  margin: 50px 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  @media only screen and (max-width: 767px) {
+    padding: 0 10px;
+  }
+}
+
+.description {
+  margin: 10px 0;
+  text-align: center;
 }
 
 .initer {
@@ -113,13 +153,16 @@ a {
   label {
     font-family: @titleFont;
     margin-bottom: 10px;
+    border: none;
+    padding: 0;
+    span {color: @grass;}
   }
   input[type=text] {
     .border-radius(5px);
     border: 1px solid @silver;
     font-family: @textFont;
     padding: 5px 10px;
-    width: 100%;
+    width: 70%;
     background: @shade;
   }
 }
@@ -141,6 +184,17 @@ a {
     top: 2px;
     opacity: 0;
     .transition(all 0.1s ease);
+  }
+  @media only screen and (max-width: 767px) {
+    float: left;
+    margin-bottom: 10px;
+  }
+}
+
+.task-content {
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    display: block;
   }
 }
 
@@ -172,6 +226,10 @@ input[type=checkbox].todo-checkbox:hover + label .check {
   }
 }
 
+input[type=checkbox].todo-checkbox:checked:hover + label .check {
+  background: @grass;
+}
+
 button, input[type=submit] {
   background: @mine;
   border: none;
@@ -196,15 +254,13 @@ button, input[type=submit] {
   }
 }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px 0;
+input[type=submit] {
+  margin-top: 30px;
 }
 
 footer {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 70px;
   padding-bottom: 50px;
   color: @silver;
   .font-size(15);
