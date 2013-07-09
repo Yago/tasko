@@ -82,7 +82,7 @@ function getTodoData() {
       <?php getTodoData(); ?>
     </div>
     <footer>
-      <a href="https://github.com/Yago31/taskr/">Fork / Doc</a> - made by <a href="http://yago.io">Yago</a>
+      <a href="https://github.com/Yago31/taskr/">Github</a> - <a href="https://twitter.com/share?url=http://tasko.me" target="_blank">Tweet it !</a> - made by <a href="http://yago.io">Yago</a>
     </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

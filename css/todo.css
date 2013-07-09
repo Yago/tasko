@@ -467,3 +467,6 @@ footer {
   font-size: 15px;
   font-size: 1.5rem;
 }
+footer a {
+  color: #b3b3b3;
+}
