@@ -1,3 +1,11 @@
 #TASKR
 
-Taskr is a light and simple todo list generator. You only have to create a Google Spreadsheet to use it. Juste create one column and write task for the first row, publish and get the ID.
+Taskr is a light and simple to-do list generator. You only have to create a **Google Spreadsheet** to use it. 
+
+###Google Spreadsheet
+
+Juste create one column and write task as a title. Publish, get the ID and paste it into TASKR.
+
+![Google Spreadsheet](img/spreadsheet.png)
+
+###[Let's to-do it !](http://yago31.github.io/taskr)
