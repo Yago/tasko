@@ -175,18 +175,18 @@ button, input[type=submit] {
   font-family: @titleFont;
   color: @white;
   padding: 8px 15px;
-  .border-radius(5px);
-  .box-shadow(0, 5px, 0, 0, @silver);
+  .border-radius(8px);
+  .box-shadow(0, 5px, 0, 0, darken(@silver, 10%));
   display: block;
   margin: 0 auto;
   margin-top: 80px;
   &:hover {
-    .box-shadow(0, 2px, 0, 0, @silver);
+    .box-shadow(0, 2px, 0, 0, darken(@silver, 10%));
     position: relative;
     top: 3px;
   }
   &:active {
-    .box-shadow(0, 0px, 0, 0, @silver);
+    .box-shadow(0, 0px, 0, 0, darken(@silver, 10%));
     position: relative;
     top: 5px;
     color: @grass;

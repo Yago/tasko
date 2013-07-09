@@ -362,33 +362,33 @@ input[type=submit] {
   font-family: 'Proxima Bold', Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #ffffff;
   padding: 8px 15px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 5px 0 0 #b3b3b3;
-  -moz-box-shadow: 0 5px 0 0 #b3b3b3;
-  -o-box-shadow: 0 5px 0 0 #b3b3b3;
-  box-shadow: 0 5px 0 0 #b3b3b3;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 0 0 #9a9a9a;
+  -moz-box-shadow: 0 5px 0 0 #9a9a9a;
+  -o-box-shadow: 0 5px 0 0 #9a9a9a;
+  box-shadow: 0 5px 0 0 #9a9a9a;
   display: block;
   margin: 0 auto;
   margin-top: 80px;
 }
 button:hover,
 input[type=submit]:hover {
-  -webkit-box-shadow: 0 2px 0 0 #b3b3b3;
-  -moz-box-shadow: 0 2px 0 0 #b3b3b3;
-  -o-box-shadow: 0 2px 0 0 #b3b3b3;
-  box-shadow: 0 2px 0 0 #b3b3b3;
+  -webkit-box-shadow: 0 2px 0 0 #9a9a9a;
+  -moz-box-shadow: 0 2px 0 0 #9a9a9a;
+  -o-box-shadow: 0 2px 0 0 #9a9a9a;
+  box-shadow: 0 2px 0 0 #9a9a9a;
   position: relative;
   top: 3px;
 }
 button:active,
 input[type=submit]:active {
-  -webkit-box-shadow: 0 0px 0 0 #b3b3b3;
-  -moz-box-shadow: 0 0px 0 0 #b3b3b3;
-  -o-box-shadow: 0 0px 0 0 #b3b3b3;
-  box-shadow: 0 0px 0 0 #b3b3b3;
+  -webkit-box-shadow: 0 0px 0 0 #9a9a9a;
+  -moz-box-shadow: 0 0px 0 0 #9a9a9a;
+  -o-box-shadow: 0 0px 0 0 #9a9a9a;
+  box-shadow: 0 0px 0 0 #9a9a9a;
   position: relative;
   top: 5px;
   color: #49c125;
