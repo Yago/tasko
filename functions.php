@@ -18,7 +18,7 @@ function getTodoContent() {
 
   if(isset($_GET["id"])){
     $key = $_GET["id"];
-    createCookie($_GET["id"]);
+    //createCookie($_GET["id"]);
   }else if(isset($_COOKIE["LastTodoSpreadsheet"])){
     reload($_COOKIE["LastTodoSpreadsheet"]);
     //echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"].'";</script>';
@@ -61,7 +61,7 @@ function getTodoContent() {
     ';
     if (isset($_POST['google-id']) && $_POST['google-id'] != ''){
       reload($_POST['google-id']);
-      createCookie($_POST['google-id']);
+      //createCookie($_POST['google-id']);
       //echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_POST['google-id'].'";</script>';
     }
   }
