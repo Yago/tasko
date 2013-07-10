@@ -1,27 +1,34 @@
 <?php
 
-  $protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https';
-  $host     = $_SERVER['HTTP_HOST'];
-  $script   = $_SERVER['SCRIPT_NAME'];
-  $params   = $_SERVER['QUERY_STRING'];
-  $baseUrl  = $protocol . '://' . $host;
+$protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https';
+$host     = $_SERVER['HTTP_HOST'];
+$script   = $_SERVER['SCRIPT_NAME'];
+$params   = $_SERVER['QUERY_STRING'];
+$baseUrl  = $protocol . '://' . $host;
 
 function createCookie($value){
-  setcookie("LastTodoSpreadsheet", $value);
+  echo '<script>
+    $(document).ready(function(){
+      $.cookie("LastTodoSpreadsheet", "'.$value.'");
+    });
+  </script>';
 }
 
 function reload($url){
-  header('Location: '.$baseUrl.'/index.php?id='.$url);
+  echo '<script>
+    $(document).ready(function(){
+      window.location = "'.$baseUrl.'/index.php?id='.$url.'";
+    });
+  </script>';
 }
 
 function getTodoContent() {
 
   if(isset($_GET["id"])){
     $key = $_GET["id"];
-    //createCookie($_GET["id"]);
+    createCookie($_GET["id"]);
   }else if(isset($_COOKIE["LastTodoSpreadsheet"])){
     reload($_COOKIE["LastTodoSpreadsheet"]);
-    //echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_COOKIE["LastTodoSpreadsheet"].'";</script>';
   }
 
   $index = 0;
@@ -61,8 +68,7 @@ function getTodoContent() {
     ';
     if (isset($_POST['google-id']) && $_POST['google-id'] != ''){
       reload($_POST['google-id']);
-      //createCookie($_POST['google-id']);
-      //echo '<script>window.location = "'.$baseUrl.'/index.php?id='.$_POST['google-id'].'";</script>';
+      createCookie($_POST['google-id']);
     }
   }
 
