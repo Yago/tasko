@@ -17,6 +17,10 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+
   </head>
   <body>
 
@@ -30,9 +34,6 @@
     <footer>
       <a href="https://github.com/Yago31/taskr/">Github</a> - <a href="https://twitter.com/share?url=http://tasko.me" target="_blank">Tweet it !</a> - made by <a href="http://yago.io">Yago</a>
     </footer>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
