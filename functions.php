@@ -1,11 +1,5 @@
 <?php
 
-$protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https';
-$host     = $_SERVER['HTTP_HOST'];
-$script   = $_SERVER['SCRIPT_NAME'];
-$params   = $_SERVER['QUERY_STRING'];
-$baseUrl  = $protocol . '://' . $host;
-
 function createCookie($value){
   echo '<script>
     $(document).ready(function(){
@@ -15,6 +9,11 @@ function createCookie($value){
 }
 
 function reload($url){
+  $protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https';
+  $host     = $_SERVER['HTTP_HOST'];
+  $script   = $_SERVER['SCRIPT_NAME'];
+  $params   = $_SERVER['QUERY_STRING'];
+  $baseUrl  = $protocol . '://' . $host;
   echo '<script>
     $(document).ready(function(){
       window.location = "'.$baseUrl.'/index.php?id='.$url.'";
@@ -22,7 +21,7 @@ function reload($url){
   </script>';
 }
 
-function getTodoContent() {
+function displayTaskoContent() {
 
   if(isset($_GET["id"])){
     $key = $_GET["id"];
@@ -50,27 +49,11 @@ function getTodoContent() {
       echo '<p class="description">The spreadsheet format is wrong, <a href="#" class="cookie-rmv">try again</a> or read the <a href="https://github.com/Yago31/taskr/">doc</a>.</p>';
     }
   }else {
-    echo '
-      <p class="description">
-        <strong>Tasko</strong> turn a simple <strong>Google Spreadsheet</strong> to a light and simple to-do list. You can reuse and share your list as you want!
-      </p>
-      <p class="description">
-        You only have to create one column and name it <strong>task</strong>. Publish it and set that anyone with a link can see the spreadsheet. Then get the ID and <strong>paste it into Tasko</strong>. Read the <a href="https://github.com/Yago31/taskr/">code</a> for more informations.
-      </p>
-      <img class="google-spreasheet" src="img/spreadsheet.png" alt="google spreasheet example" />
-    ';
-    echo '<hr />';
-    echo '
-      <form method="post" class="initer">
-        <label for="google-id">Google Spreadsheets <span>ID</span></label> <input type="text" name="google-id" id="google-id"><br />
-        <input type="submit" value="Load list">
-      </form>
-    ';
+    require('inc/homepage.html');
     if (isset($_POST['google-id']) && $_POST['google-id'] != ''){
       reload($_POST['google-id']);
       createCookie($_POST['google-id']);
     }
   }
-
 }
 

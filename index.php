@@ -29,7 +29,7 @@
     </header>
     <div class="container">
       <?php require('functions.php'); ?>
-      <?php getTodoContent(); ?>
+      <?php displayTaskoContent(); ?>
     </div>
     <footer>
       <a href="https://github.com/Yago31/taskr/">Github</a> - <a href="https://twitter.com/share?url=http://tasko.me" target="_blank">Tweet it !</a> - made by <a href="http://yago.io">Yago</a>
